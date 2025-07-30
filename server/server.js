@@ -7,7 +7,7 @@ const path     = require('path');
 require('dotenv').config();
 
 // 1️⃣ Ensure the uploads directory exists
-const uploadDir = path.join(__dirname, 'uploads');
+const uploadDir = path.join(__dirname, '../uploads'); ///
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -40,7 +40,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // 5️⃣ Route mounting
 app.use('/api/auth',  require('./routes/auth'));
-app.use('/api/posts', upload.single('image'), require('./routes/posts'));
+app.use('/api/posts', upload.single('image'), require('./routes/posts')); ///err
 
 // 6️⃣ Start server
 const port = process.env.PORT || 5001;
