@@ -24,7 +24,7 @@ export default function CreatePost() {
   useEffect(() => {
     if (isEdit) {
       const token = localStorage.getItem('token');
-      axios.get(`http://localhost:5001/api/posts`, { ////
+      axios.get(`http://localhost:5001/api/posts`, { 
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {
